@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>TodoList</title>
-<!--    <link rel="stylesheet" href="./css/index.css">-->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function updateCompleted(todoId, Checked) {
+            fetch(`/todo/update/${todoId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `completed=${Checked}`
+            }).then(response => {
+                if (!response.ok) {
+                    alert("업데이트 실패");
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="container">
-    <h1>TodoList</h1>
+    <h1>💜 투두 리스트 🤍</h1>
     <form th:action="@{/todo/add}" method="post">
         <input type="text" name="content" placeholder="새할일 작성"/>
         <button id="add-task" type="submit">추가</button>
@@ -26,7 +41,11 @@
             <tr th:each="todo:${todos}">
                 <td th:text="${todo.id}"></td>
                 <td th:text="${todo.content}"></td>
-                <td th:text="${todo.completed}"></td>
+                <td>
+                <input type="checkbox" th:checked="${todo.completed}"
+                       th:id="${todo.id}"
+                       onchange="updateCompleted(id, checked)"/>
+                </td>
                 <td>
                     <form th:action="@{/todo/delete/{id}(id=${todo.id})}" method="post">
                         <button id="delete-task" type="submit">삭제</button>

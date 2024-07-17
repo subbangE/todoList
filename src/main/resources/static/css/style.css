@@ -1,3 +1,99 @@
-.todo-table {
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'LeeSeoyun', sans-serif;
+    font-size: 22px;
+}
+
+body {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-form input{
+    border: 1px solid silver;
+    padding: 7px;
+    margin-right: 5px;
+}
+
+.add-form button {
+    padding: 6px 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.title {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.todo-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.todo-table th, .todo-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.todo-table td {
+    background-color: #fff;
+    color: #555;
+}
+
+.todo-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.todo-table input[type="checkbox"] {
+    transform: scale(1.5); /* 체크박스 크기 키우기 */
+    margin: 0;
+}
+
+.todo-table button {
+    padding: 8px 12px;
+    background-color: plum;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-table button:hover {
+    background-color: purple;
 }

@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>TodoList</title>
+<!--    <link rel="stylesheet" href="./css/index.css">-->
 </head>
 <body>
+<div class="container">
     <h1>TodoList</h1>
+    <form th:action="@{/todo/add}" method="post">
+        <input type="text" name="content" placeholder="새할일 작성"/>
+        <button id="add-task" type="submit">추가</button>
+    </form>
+    <br>
+    <div class="todo-table">
+        <table>
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>할 일</th>
+                <th>완료여부</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="todo:${todos}">
+                <td th:text="${todo.id}"></td>
+                <td th:text="${todo.content}"></td>
+                <td th:text="${todo.completed}"></td>
+                <td>
+                    <form th:action="@{/todo/delete/{id}(id=${todo.id})}" method="post">
+                        <button id="delete-task" type="submit">삭제</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

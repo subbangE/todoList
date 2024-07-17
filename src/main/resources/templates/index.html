@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>TodoList</title>
     <link rel="stylesheet" href="/css/style.css">
+    <!--  비동기 사용  -->
     <script>
         function updateCompleted(todoId, Checked) {
             fetch(`/todo/update/${todoId}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/x-www-form-urlencoded' // form 데이터를 URL 인코딩하여 전송
                 },
                 body: `completed=${Checked}`
             }).then(response => {

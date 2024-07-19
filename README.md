@@ -12,6 +12,6 @@
 + 투두 리스트 CRUD
 
 ## 제작후 개선 필요한 점
-+ @Autowired로 의존성을 주입하는 대신 @RequiredArgsConstructor을 이용하여 사용해야함
-+ @RequiredArgsConstructor은 초기화 되지않은 final 필드 및 @NonNull 이 붙은 필드에 대해 생성자를 생성해줌
-+ 불변성 보장을 해주고 코드도 간결해짐
+> @Autowired로 의존성을 주입하는 대신 @RequiredArgsConstructor을 이용하여 사용해야함
+> @RequiredArgsConstructor은 초기화 되지않은 final 필드 및 @NonNull 이 붙은 필드에 대해 생성자를 생성해줌
+> 불변성 보장을 해주고 코드도 간결해짐
